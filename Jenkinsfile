@@ -13,12 +13,25 @@ pipeline {
                     branch: 'main'
             }
         }
-        steps('build') {
+        stage('build') {
             steps {
                 sh 'building code ....'
                 sh 'static code analysis'
                 sh 'archive the package into jfrog'
                 sh 'quality gate'
+            }
+        }
+        stage('deploy')
+        {
+            steps {
+                sh 'using terraform create env'
+                sh 'use kubectl to deploy'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'run end to end system tests'
+                sh 'display test results'
             }
         }
         
