@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     tools {
-        maven 'MAVEN_3.9.8' 
+        maven 'apache-maven-3.9.9' 
     }
     stages {
         stage('VCS') {
