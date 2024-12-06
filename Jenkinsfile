@@ -10,28 +10,28 @@ pipeline {
         stage('VCS') {
             steps {
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', 
-                    branch: 'main'
+                    branch: 'perftest'
             }
         }
         stage('build') {
             steps {
-                sh 'echo building code ....'
-                sh 'echo static code analysis'
-                sh 'echo archive the package into jfrog'
-                sh 'echo quality gate'
+                echo 'sh building code ....'
+                echo 'sh static code analysis'
+                echo 'sh archive the package into jfrog'
+                echo 'sh quality gate'
             }
         }
         stage('deploy')
         {
             steps {
-                sh 'echo using terraform create env'
-                sh 'echo use kubectl to deploy'
+                echo 'sh using terraform create env'
+                echo 'sh use kubectl to deploy'
             }
         }
         stage('test') {
             steps {
-                sh 'echo run end to end performance tests'
-                sh 'echo display test results'
+                echo 'sh run end to end performance tests'
+                echo 'sh display test results'
             }
         }
         
