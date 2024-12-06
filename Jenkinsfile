@@ -10,15 +10,15 @@ pipeline {
         stage('VCS') {
             steps {
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', 
-                    branch: 'main'
+                    branch: 'dev'
             }
         }
         stage('build') {
             steps {
-                sh 'building code ....'
-                sh 'static code analysis'
-                sh 'archive the package into jfrog'
-                sh 'quality gate'
+                echo 'sh building code ....'
+                echo 'sh static code analysis'
+                echo 'sh archive the package into jfrog'
+                echo 'sh quality gate'
             }
         }
         
