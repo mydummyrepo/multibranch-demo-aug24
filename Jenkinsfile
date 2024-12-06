@@ -1,5 +1,7 @@
 pipeline {
-    agent any 
+    agent{
+        label 'maven'
+    } 
     tools {
         maven 'apache-maven-3.9.9' 
     }
