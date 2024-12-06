@@ -12,14 +12,14 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'building code ....'
-                sh 'static code analysis'
-                sh 'archive the package into jfrog'
+                echo 'sh building code ....'
+                echo 'sh static code analysis'
+                echo 'sh archive the package into jfrog'
             }
         }
         stage('deploy-prod') {
             steps {
-                sh 'deploy into production'
+                echo 'sh deploy into production'
             }
         }
     }
